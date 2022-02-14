@@ -31,14 +31,20 @@ app.use(express.json())
 const refresh = require('./controllers/auth/refresh')
 const enableMfa = require('./controllers/auth/enable-mfa')
 
+// Users
+const login = require('./controllers/user/login')
+
 // -------------------------------------------------------------------------------------------------- //
 // Routes definition
 // -------------------------------------------------------------------------------------------------- //
 
+// Users
+app.post('/login', login)
+
 // Posts
-app.get('/posts/posts/:category', getPostsByCategory)
-app.get('/posts/posts:tag', getPostsByTag)
-app.get('/posts/posts:id', getPostsById)
+// app.get('/posts/posts/:category', getPostsByCategory)
+// app.get('/posts/posts:tag', getPostsByTag)
+// app.get('/posts/posts:id', getPostsById)
 
 mongoose.connect(getDbConnectionString(), { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
