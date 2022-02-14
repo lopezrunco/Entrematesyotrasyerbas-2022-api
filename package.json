@@ -4,13 +4,14 @@
   "description": "\u0016Blog app of \"Entre mates y otras yerbas\" radio show",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon api.js",
+    "start": "nodemon src/api.js",
     "seed": "node src/commands/seeder.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Damian Lopez",
   "license": "ISC",
   "dependencies": {
+    "@meanie/mongoose-to-json": "^2.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
