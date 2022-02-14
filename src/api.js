@@ -18,6 +18,8 @@ const app = express()
 // Middlewares
 // -------------------------------------------------------------------------------------------------- //
 
+const checkUserCredentials = require('./middlewares/check-user-credentials')
+
 app.use(cors())
 app.use(express.json())
 
