@@ -17,6 +17,10 @@ DB_PASSWORD
 ```bash
 # Install dependencies
 npm i
+
+# Inser demo data
+npm run seed
+
 # Start API
 npm start
 ```
