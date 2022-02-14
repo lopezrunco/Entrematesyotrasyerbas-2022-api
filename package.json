@@ -1,0 +1,23 @@
+{
+  "name": "entrematesyotrasyerbas",
+  "version": "1.0.0",
+  "description": "\u0016Blog app of \"Entre mates y otras yerbas\" radio show",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon api.js",
+    "seed": "node src/commands/seeder.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Damian Lopez",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.1"
+  },
+  "devDependencies": {
+    "Faker": "^0.7.2",
+    "nodemon": "^2.0.15"
+  }
+}
