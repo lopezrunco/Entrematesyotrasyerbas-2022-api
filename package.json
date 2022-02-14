@@ -4,7 +4,8 @@
   "description": "\u0016Blog app of \"Entre mates y otras yerbas\" radio show",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/api.js",
+    "start": "node src/api.js",
+    "dev": "nodemon src/api.js",
     "seed": "node src/commands/seeder.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,10 +17,12 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.1"
+    "mongoose": "^6.2.1",
+    "otplib": "^12.0.1",
+    "qrcode": "^1.5.0"
   },
   "devDependencies": {
-    "Faker": "^0.7.2",
+    "faker": "^6.6.6",
     "nodemon": "^2.0.15"
   }
 }
