@@ -33,6 +33,7 @@ const enableMfa = require('./controllers/auth/enable-mfa')
 
 // Users
 const login = require('./controllers/user/login')
+const register = require('./controllers/user/register')
 
 // -------------------------------------------------------------------------------------------------- //
 // Routes definition
@@ -40,6 +41,7 @@ const login = require('./controllers/user/login')
 
 // Users
 app.post('/login', login)
+app.post('/register', register)
 
 // Posts
 // app.get('/posts/posts/:category', getPostsByCategory)
