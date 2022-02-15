@@ -38,6 +38,8 @@ const register = require('./controllers/user/register')
 // Posts
 const getAllPosts = require('./controllers/posts/get-all')
 const getPostById = require('./controllers/posts/get-by-id')
+const getPostsByCategory = require('./controllers/posts/get-by-category')
+const getPostsByTag = require('./controllers/posts/get-by-tag')
 
 // -------------------------------------------------------------------------------------------------- //
 // Routes definition
@@ -50,8 +52,8 @@ app.post('/register', register)
 // Posts
 app.get('/posts', getAllPosts)
 app.get('/posts/:id', getPostById)
-// app.get('/posts/:category', getPostsByCategory)
-// app.get('/posts/:tag', getPostsByTag)
+app.get('/posts/category/:category', getPostsByCategory)
+app.get('/posts/tag/:tag', getPostsByTag)
 
 mongoose.connect(getDbConnectionString(), { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
