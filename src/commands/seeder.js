@@ -24,6 +24,16 @@ for (let generateUsersIndex = 0; generateUsersIndex < numberOfUsers; generateUse
 }
 
 for (let generatePostsIndex = 0; generatePostsIndex < numberOfPosts; generatePostsIndex++) {
+    
+    const content = []
+    const subcontent = []
+    for (let contentIndex = 0; contentIndex < faker.datatype.number(20); contentIndex++) {
+        content.push(faker.lorem.paragraph())        
+    }
+    for (let subcontentIndex = 0; subcontentIndex < faker.datatype.number(30); subcontentIndex++) {
+        subcontent.push(faker.lorem.paragraph())        
+    }
+    
     posts.push({
         title: faker.name.title(),
         published: true,
@@ -34,30 +44,8 @@ for (let generatePostsIndex = 0; generatePostsIndex < numberOfPosts; generatePos
             faker.lorem.word()
         ],
         primaryImageUrl: faker.image.image(),
-        content: [
-            faker.lorem.paragraph(),
-            faker.lorem.paragraph(),
-            faker.lorem.paragraph(),
-            faker.lorem.paragraph(),
-            faker.lorem.paragraph(),
-            faker.lorem.paragraph(),
-            faker.lorem.paragraph(),
-            {
-                subtitle: faker.name.title(),
-                subcontent: [
-                    faker.lorem.paragraph(),
-                    faker.lorem.paragraph(),
-                    faker.lorem.paragraph()
-                ]
-            },
-            {
-                subtitle: faker.name.title(),
-                subcontent: [
-                    faker.lorem.paragraph(),
-                    faker.lorem.paragraph(),
-                ]
-            }
-        ],
+        content: content,
+        subcontent: subcontent,
         secondaryImagesUrls: [
             faker.image.image(),
             faker.image.image(),

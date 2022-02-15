@@ -35,6 +35,9 @@ const enableMfa = require('./controllers/auth/enable-mfa')
 const login = require('./controllers/user/login')
 const register = require('./controllers/user/register')
 
+// Posts
+const getAllPosts = require('./controllers/post/get-all')
+
 // -------------------------------------------------------------------------------------------------- //
 // Routes definition
 // -------------------------------------------------------------------------------------------------- //
@@ -44,9 +47,10 @@ app.post('/login', login)
 app.post('/register', register)
 
 // Posts
-// app.get('/posts/posts/:category', getPostsByCategory)
-// app.get('/posts/posts:tag', getPostsByTag)
-// app.get('/posts/posts:id', getPostsById)
+app.get('/posts', getAllPosts)
+// app.get('/posts/:category', getPostsByCategory)
+// app.get('/posts/:tag', getPostsByTag)
+// app.get('/posts/:id', getPostsById)
 
 mongoose.connect(getDbConnectionString(), { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {

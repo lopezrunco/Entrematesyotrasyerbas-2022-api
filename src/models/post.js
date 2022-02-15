@@ -29,6 +29,10 @@ const postSchema = new Schema({
         type: Array,
         default: []
     },
+    subcontent: {
+        type: Array,
+        default: []
+    },
     secondaryImagesUrls: {
         type: Array,
         default: []
