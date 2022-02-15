@@ -45,6 +45,10 @@ const getPostsByTag = require('./controllers/posts/get-by-tag')
 // Routes definition
 // -------------------------------------------------------------------------------------------------- //
 
+// Security
+app.get('/auth/refresh', checkUserCredentials('REFRESH'), refresh)
+app.get('/auth/mfa', checkUserCredentials(), enableMfa)
+
 // Users
 app.post('/login', login)
 app.post('/register', register)

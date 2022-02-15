@@ -10,6 +10,8 @@ module.exports = (request, response) => {
     const schema = Joi.object({
         name: Joi.string()
             .alphanum()
+            .min(3)
+            .max(20)
             .required(),
         email: Joi.string()
             .email()
@@ -28,13 +30,18 @@ module.exports = (request, response) => {
         userModel.create({
             name: user.name,
             email: user.email,
-            password: user.password
+            password: user.password,
+            mfaEnabled: false,
+            mfaSecret: ''
 
         }).then (user => {
             const userWithoutPasswords = user.toObject()
 
             delete userWithoutPasswords.password
+            delete userWithoutPasswords.mfaEnabled
             delete userWithoutPasswords.mfaSecret
+            userWithoutPasswords.id = userWithoutPasswords._id
+            delete userWithoutPasswords._id
 
             userWithoutPasswords.token = createToken(user, CONSUMER_TOKEN_TYPE, '30m')
             userWithoutPasswords.refreshToken = createToken(user, REFRESH_TOKEN_TYPE, '3d')

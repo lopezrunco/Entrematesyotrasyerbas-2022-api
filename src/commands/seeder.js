@@ -14,8 +14,10 @@ const posts = []
 const numberOfPosts = 20
 
 for (let generateUsersIndex = 0; generateUsersIndex < numberOfUsers; generateUsersIndex++) {
+    const regex = /([!?@#.$%^&*,_-])/ig    
+    
     users.push({
-        name: faker.internet.userName(),
+        name: faker.internet.userName().replaceAll(regex, ''),
         email: faker.internet.email(),
         password: userPassword,
         mfaEnabled: false,
