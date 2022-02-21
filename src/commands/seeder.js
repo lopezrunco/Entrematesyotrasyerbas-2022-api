@@ -28,12 +28,17 @@ for (let generateUsersIndex = 0; generateUsersIndex < numberOfUsers; generateUse
 for (let generatePostsIndex = 0; generatePostsIndex < numberOfPosts; generatePostsIndex++) {
     
     const content = []
-    const subcontent = []
+    const subcontent = [[], []]
     for (let contentIndex = 0; contentIndex < faker.datatype.number(20); contentIndex++) {
         content.push(faker.lorem.paragraph())        
     }
     for (let subcontentIndex = 0; subcontentIndex < faker.datatype.number(30); subcontentIndex++) {
-        subcontent.push(faker.lorem.paragraph())        
+        for (let subcontFirstChildIndex = 0; subcontFirstChildIndex < 2; subcontFirstChildIndex++) {
+            subcontent[0].push(faker.lorem.paragraph())
+        }
+        for (let subcontSecondChildIndex = 0; subcontSecondChildIndex < 3; subcontSecondChildIndex++) {
+            subcontent[1].push(faker.lorem.paragraph())      
+        }
     }
     
     posts.push({

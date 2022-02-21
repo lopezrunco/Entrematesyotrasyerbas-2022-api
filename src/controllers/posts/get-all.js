@@ -3,7 +3,7 @@ const { postModel } = require('../../models/post')
 module.exports = (request, response) => {
     const pagination = {
         offset: 0,
-        limit: 10
+        limit: 12
     }
 
     if (request.query.page && request.query.itemsPerPage) {
