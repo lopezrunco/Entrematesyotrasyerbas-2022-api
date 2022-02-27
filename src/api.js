@@ -40,6 +40,7 @@ const getAllPosts = require('./controllers/posts/get-all')
 const getPostById = require('./controllers/posts/get-by-id')
 const getPostsByCategory = require('./controllers/posts/get-by-category')
 const getPostsByTag = require('./controllers/posts/get-by-tag')
+const getPostsByAuthor = require('./controllers/posts/get-by-author')
 
 // -------------------------------------------------------------------------------------------------- //
 // Routes definition
@@ -58,6 +59,7 @@ app.get('/posts', getAllPosts)
 app.get('/posts/:id', getPostById)
 app.get('/posts/category/:category', getPostsByCategory)
 app.get('/posts/tag/:tag', getPostsByTag)
+app.get('/posts/author/:author', getPostsByAuthor)
 
 mongoose.connect(getDbConnectionString(), { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
