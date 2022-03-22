@@ -34,6 +34,7 @@ const enableMfa = require('./controllers/auth/enable-mfa')
 // Users
 const login = require('./controllers/user/login')
 const register = require('./controllers/user/register')
+const getAllUsers = require('./controllers/user/get-all')
 
 // Posts
 const getAllPosts = require('./controllers/posts/get-all')
@@ -55,6 +56,7 @@ app.get('/auth/mfa', checkUserCredentials(), enableMfa)
 // Users
 app.post('/login', login)
 app.post('/register', register)
+app.get('/users', getAllUsers)
 
 // Posts
 app.get('/posts', getAllPosts)
